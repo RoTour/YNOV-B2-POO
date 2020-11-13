@@ -1,21 +1,31 @@
 package com.ynov.demo.concession.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Vehicle {
 
-    String mRegistration = "";
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    String registration = "";
 
     public Vehicle() {
     }
 
     public Vehicle(String registration) {
-        mRegistration = registration;
+        this.registration = registration;
     }
 
     public String getRegistration() {
-        return mRegistration;
+        return registration;
     }
 
     public void setRegistration(String registration) {
-        this.mRegistration = registration;
+        this.registration = registration;
     }
 }

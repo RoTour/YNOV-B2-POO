@@ -31,6 +31,12 @@ public class ConcessionController {
         return concessionService.getVehicle(id);
     }
 
+    @GetMapping("/vehicle/generate")
+    @ResponseStatus(HttpStatus.OK)
+    public void generateVehicles() {
+        concessionService.generateVehicles();
+    }
+
 
 }
 
